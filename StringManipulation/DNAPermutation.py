@@ -3,6 +3,7 @@ import random as rand
     For CS study purposes, we might have more than 4 types nucleotides AGTC
     1. Check if 2 DNA piece is a permutation of each other //DNA Self-Permutation
     2. Check if a long DNA string has permutations of a DNA piece //DNA Permutation Detection
+    Strick 
 """
 def random_defection(nucSet,length):
     """
@@ -74,7 +75,7 @@ if __name__ == "__main__":
     print(is_permuted)
 
     piece = "atgc"
-    defectedString = random_defection(piece,10)
+    defectedString = random_defection(piece,100)
     indices, permutations= return_permutations(piece,defectedString)
 
     print(defectedString)
