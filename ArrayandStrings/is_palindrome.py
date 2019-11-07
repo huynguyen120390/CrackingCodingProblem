@@ -3,7 +3,6 @@ if __name__ == "__main__":
     sys.path.append(os.path.join(os.path.dirname(sys.path[0]),'DataStructureImplementations'))
     from SinglyLinkedList import *
 
-
 def is_palindromeString(string):
     string = string.replace(" ","")  #if we dont care about space " "
     #stock char and their occurencies
@@ -18,7 +17,6 @@ def is_palindromeString(string):
 
     return True
 
-
 def is_palindromeArray(arr):
     i = 0
     j = len(arr) - 1
@@ -29,7 +27,6 @@ def is_palindromeArray(arr):
             i+= 1
             j-= 1
     return True
-
 
 def is_palindromeInt(int):
     def int2arr(int):
@@ -51,8 +48,6 @@ def is_palindromeInt(int):
             j+=1
     return True
 
-
-    
 def reverse(sll):
     if sll.head == None:
         raise EmptyLinkedList
@@ -83,7 +78,6 @@ def reverse(sll):
         
         sll.head = pointee 
         pointee = None
-
  
 def is_palindromeLinkedList(sll): #Mem O(2n) , Time O(2n) or Mem O(n), Time O(n)
     sll1 = copy.deepcopy(sll)#Mem O(n) 
@@ -98,7 +92,6 @@ def is_palindromeLinkedList(sll): #Mem O(2n) , Time O(2n) or Mem O(n), Time O(n)
             p2 = p2.next
     return True
         
-
 def is_palindromeLinkedList2(sll): #Mem O(n) ,Time (3/2*n) or Mem(n), Time O(n)
     arr = []
     p = sll.head
@@ -115,10 +108,5 @@ def is_palindromeLinkedList2(sll): #Mem O(n) ,Time (3/2*n) or Mem(n), Time O(n)
         j-=1
     return True
         
-            
-
-        
-
-
 if __name__ == "__main__":
     print(is_palindromeInt(10011))

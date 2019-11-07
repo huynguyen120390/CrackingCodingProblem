@@ -149,8 +149,6 @@ def is_palindromeLinkedList2(sll): #Mem O(n) ,Time (3/2*n) or Mem(n), Time O(n)
     return True
         
 
-
-
 class EmptyLinkedList(Exception):pass
 class OutOfListBound(Exception):pass
 
