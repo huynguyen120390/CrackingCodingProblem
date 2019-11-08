@@ -7,7 +7,6 @@ class ThreeStack:
         self.capacity = capacity
         self.divisor = divisor
         self.arr = [None]*capacity
-        
         self.cap = [0]*divisor
         self.size = [0]*divisor
         self.topIndex = [0]*divisor
@@ -20,27 +19,22 @@ class ThreeStack:
             self.topIndex[i] = end + 1
             self.cap[i] = end - start + 1
             
-
     def malloc(self,id):
         eachSize = math.floor(self.capacity/self.divisor)
         if id == self.divisor - 1:
             start,end = eachSize * id, self.capacity - 1
         else:
             start,end = eachSize * id, eachSize*(id + 1) - 1
-        
         top = self.topIndex[id]
         cap = self.cap[id]
-    
         return start,end,top,cap
 
-
     def is_full(self,id):
-        _,_,top,cap = self.malloc(id)
-        if top == cap - 1:
+        start,_,top,cap = self.malloc(id)
+        if top == start:
             return True
         return False
     
-
     def is_empty(self,id):
         _,end,top,_ = self.malloc(id)
         if end + 1 == top:
@@ -50,16 +44,17 @@ class ThreeStack:
     def __update_top(self,id,is_push):
         if is_push:
             self.topIndex[id] -= 1
+            self.size[id] +=1
         else:
             self.topIndex[id] += 1
+            self.size[id] -=1
         
-
     def push(self,data,id):
         if self.is_full(id):
             raise FullStack
-        _,_,top,_= self.malloc(id)
         print('push',self.topIndex)
         self.__update_top(id,is_push = True)
+        _,_,top,_= self.malloc(id)
         self.arr[top] = data
         
         return data
@@ -100,24 +95,16 @@ class ThreeStack:
             raise EmptyStack
         _,_,top,_ = self.malloc(id)
         return self.arr[top]
-        
 
-        
-        
-
-
-
-
-        
 
 class FullStack(Exception):pass
 class EmptyStack(Exception):pass
 if __name__ == "__main__":
-    stacks = ThreeStack(6,3)
+    stacks = ThreeStack(3,3)
     stacks.push(1,1)
     stacks.push(1,0)
     stacks.push(1,2)
-    stacks.pop(1)
+   # stacks.pop(1)
     print(stacks.arr)
 
         

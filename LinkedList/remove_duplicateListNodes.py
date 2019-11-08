@@ -4,6 +4,7 @@ if __name__ == "__main__":
     print(os.path.join(os.path.dirname(sys.path[0]),'DataStructureImplementations'))
     from SinglyLinkedList import *
 
+
 def remove_duplicateSLLNodes(sll): #Mem O(n), Time O(n)
     if sll.head == None:
         raise EmptyLinkedList
@@ -28,6 +29,7 @@ def remove_duplicateSLLNodes(sll): #Mem O(n), Time O(n)
                 cur = None
 
     return sll
+
 
 def remove_duplicateSLLNodes2(sll) : #Mem O(1), Time O(n^2) , cracking coding can't find better solution without using extra memory
     if sll.head == None:
