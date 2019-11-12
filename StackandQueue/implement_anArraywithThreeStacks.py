@@ -87,7 +87,6 @@ class ThreeStack:
         print(self.topIndex)
         self.arr[top]= None
         self.__update_top(id,is_push = False)
-
         return data
     
     def peek(self,data,id):
