@@ -40,4 +40,15 @@ if __name__ == "__main__":
     sll = return_chain_kth_from_last(sll,k)
     print_intSLL(sll)
 
-    
+
+    def get_key(pair):
+        return pair[0]
+    def sort():
+    winfile = list()
+    with open ('winners.txt') as fin:
+            for line in fin:
+                    winfile.append(line.strip('\n'))
+    winfile.sort(key= get_key))
+    with open('SortWin.txt', 'w+') as fout:
+            for winfile in winfile:
+                    fout.write(winfile + '\n')

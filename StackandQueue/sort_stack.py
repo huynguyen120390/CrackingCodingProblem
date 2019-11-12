@@ -1,3 +1,4 @@
+#from numba import jit,float32
 class Stack:
     def __init__(self,cap):
         self.arr = []
@@ -123,6 +124,7 @@ def sort_stack(s1):
    
     return s1
 
+#@jit(nopython = True)
 def sort_stack2(s1): 
     #O(n^2) 
     # if n = 2000, time = 1.8272910118103027 
@@ -130,9 +132,9 @@ def sort_stack2(s1):
     if s1.is_empty():
         raise EmptyStack
     elif s1.size == 1:
-        return s
+        return s1
 
-    s2 = Stack(s.cap)
+    s2 = Stack(s1.cap)
     swap = 0
     count = 0
     size = s1.size
